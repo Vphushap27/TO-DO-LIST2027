@@ -6,32 +6,59 @@
 }
 
 body {
-    background: linear-gradient(135deg, #0f172a, #1e1b4b, #312e81);
+    background: #0b0f19;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding: 15px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Glowing Background Blobs to fill empty space */
+.bg-blob {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.blob-1 {
+    top: 10%;
+    left: 5%;
+    background: #4f46e5;
+}
+
+.blob-2 {
+    bottom: 10%;
+    right: 5%;
+    background: #0284c7;
 }
 
 .ad-banner-top, .ad-native-container {
     margin: 10px 0;
     max-width: 100%;
     text-align: center;
+    z-index: 2;
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
     max-width: 440px;
     padding: 24px 20px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    margin-bottom: 15px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    z-index: 2;
 }
 
 .header-section {
@@ -39,14 +66,17 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 18px;
-    flex-wrap: nowrap;
 }
 
 h2 {
     color: #ffffff;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
-    white-space: nowrap;
+}
+
+.subtitle {
+    color: #94a3b8;
+    font-size: 11px;
 }
 
 .smart-link-btn {
@@ -57,18 +87,17 @@ h2 {
     text-decoration: none;
     font-size: 11px;
     font-weight: 600;
-    box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
-    white-space: nowrap;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
 }
 
 .stats-container {
     display: flex;
     justify-content: space-between;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px;
     border-radius: 14px;
     margin-bottom: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .stat-box {
@@ -96,32 +125,34 @@ h2 {
 
 #taskInput {
     flex: 1;
-    padding: 10px 14px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1.5px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
     outline: none;
     font-size: 14px;
     color: #ffffff;
 }
 
 #taskInput::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 #taskInput:focus {
     border-color: #38bdf8;
+    background: rgba(255, 255, 255, 0.12);
 }
 
 .input-section button {
     background: linear-gradient(135deg, #38bdf8, #0284c7);
     color: white;
     border: none;
-    padding: 10px 16px;
-    border-radius: 10px;
+    padding: 12px 18px;
+    border-radius: 12px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
 }
 
 .filter-section {
@@ -132,17 +163,17 @@ h2 {
 
 .filter-btn {
     flex: 1;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     color: #94a3b8;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 6px;
-    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 8px;
+    border-radius: 10px;
     font-size: 12px;
     cursor: pointer;
 }
 
 .filter-btn.active {
-    background: rgba(56, 189, 248, 0.2);
+    background: rgba(56, 189, 248, 0.15);
     color: #38bdf8;
     border-color: #38bdf8;
 }
@@ -154,30 +185,36 @@ ul {
 }
 
 ul li {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 10px 14px;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 12px 14px;
+    border-radius: 12px;
     margin-bottom: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     font-size: 14px;
     color: #f1f5f9;
 }
 
 ul li.completed {
     text-decoration: line-through;
-    opacity: 0.5;
-    background: rgba(0, 0, 0, 0.2);
+    opacity: 0.4;
+}
+
+.empty-state {
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    padding: 20px 0;
 }
 
 .delete-btn {
     background: #ef4444;
     color: white;
     border: none;
-    padding: 5px 10px;
-    border-radius: 6px;
+    padding: 6px 10px;
+    border-radius: 8px;
     font-size: 12px;
     cursor: pointer;
 }
