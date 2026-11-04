@@ -60,6 +60,12 @@ function renderTasks() {
         return true;
     });
 
+    if (filteredTasks.length === 0) {
+        list.innerHTML = `<li class="empty-state">✨ No tasks here yet. Add one above!</li>`;
+        updateCounters();
+        return;
+    }
+
     filteredTasks.forEach(task => {
         const li = document.createElement('li');
         if (task.completed) li.classList.add('completed');
