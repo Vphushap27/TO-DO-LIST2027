@@ -3,18 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My To-Do List</title>
+    <title>Pro Task Manager</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Adsterra Social Bar Script -->
+    <script data-cfasync="false" src="https://bancadeltempoidea.org/14/aeb4da08c8aa71cca1f0c5467a70f09f"></script>
 </head>
 <body>
+
+    <!-- Top Banner Ad -->
+    <div class="ad-banner-top">
+        <script>
+          atOptions = {
+            'key' : 'd1f8c73d1bdace96552063f1e0fdbe20',
+            'format' : 'iframe',
+            'height' : 60,
+            'width' : 468,
+            'params' : {}
+          };
+        </script>
+        <script src="https://bancadeltempoidea.org/22/d1f8c73d1bdace96552063f1e0fdbe20"></script>
+    </div>
+
+    <!-- Main App Container -->
     <div class="container">
-        <h2>My To-Do List 📝</h2>
+        <div class="header-section">
+            <h2>Task Manager ⚡</h2>
+            <a href="https://asiafilm.org/4/19d8bab6f9fffd049b076c1f8f9e9c0c" target="_blank" class="smart-link-btn">
+                🔥 Special Offers
+            </a>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <span id="total-count">0</span>
+                <p>Total</p>
+            </div>
+            <div class="stat-box">
+                <span id="active-count">0</span>
+                <p>Pending</p>
+            </div>
+            <div class="stat-box">
+                <span id="completed-count">0</span>
+                <p>Done</p>
+            </div>
+        </div>
+
         <div class="input-section">
             <input type="text" id="taskInput" placeholder="Add a new task...">
-            <button onclick="addTask()">Add</button>
+            <button onclick="addTask()">Add Task</button>
         </div>
+
+        <div class="filter-section">
+            <button class="filter-btn active" onclick="filterTasks('all', this)">All</button>
+            <button class="filter-btn" onclick="filterTasks('active', this)">Active</button>
+            <button class="filter-btn" onclick="filterTasks('completed', this)">Completed</button>
+        </div>
+
         <ul id="taskList"></ul>
     </div>
+
+    <!-- Native Banner Ad Section -->
+    <div class="ad-native-container">
+        <script async="async" data-cfasync="false" src="https://bancadeltempoidea.org/21/b30d2976959eac856515ff12e0212852"></script>
+        <div id="container-b30d2976959eac856515ff12e0212852"></div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
